@@ -1,28 +1,26 @@
-def printList(arr: list):
-    for ele in arr:
-        print(ele)
+class Solution(object):
+    def wave_value(self, num: int, index: int) -> int:
+        wave_length = 2 * num
+
+        position = index % wave_length
+
+        if position <= num:
+            return position
+        else:
+            return wave_length - position
 
 
-def wave_value(num: int, index: int) -> int:
-    wave_length = 2 * num
-
-    position = index % wave_length
-
-    if position <= num:
-        return position
-    else:
-        return wave_length - position
-
-
-def convert(s: str, numRows: int) -> str:
-    strings = ["" for _ in range(numRows)]
-    for i in range(len(s)):
-        level = wave_value(numRows - 1, i)
-        strings[level] += s[i]
-    return "".join(strings)
+    def convert(self, s: str, numRows: int) -> str:
+        if numRows == 1:
+            return s
+        strings = ["" for _ in range(numRows)]
+        for i in range(len(s)):
+            level = self.wave_value(numRows - 1, i)
+            strings[level] += s[i]
+        return "".join(strings)
 
 
-print(convert("abcdefg", 4))
+print(Solution().convert("A", 1))
 
 
 # def wave_value(num, index):

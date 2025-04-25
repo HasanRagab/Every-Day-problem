@@ -1,0 +1,11 @@
+{
+  "github.copilot.enable": {
+    "*": false,
+    "plaintext": true,
+    "markdown": true,
+    "scminput": false,
+    "typescriptreact": true,
+    "python": false
+  },
+  "cSpell.words": ["Subarrays"]
+}
